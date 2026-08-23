@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta
+        name="description"
+        content="Engagement Invitation — Amritha & Abhijith"
+    >
+
+    <title>Amritha & Abhijith | Engagement Invitation</title>
+
+    <!--
+        The visual styling is in style.css
+        The animations, countdown and music are in script.js
+    -->
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         MUSIC
+         ===================================================== -->
+
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- =====================================================
+         MUSIC CONTROL
+         This remains hidden until the invitation is opened.
+         ===================================================== -->
+
+    <button
+        id="musicToggle"
+        class="music-control"
+        type="button"
+        aria-label="Toggle background music"
+        aria-pressed="false"
+    >
+        <span class="music-icon">♪</span>
+    </button>
+
+
+    <!-- =====================================================
+         SCREEN 1 — COVER
+         ===================================================== -->
+
+    <main id="invitation">
+
+        <section
+            id="screen1"
+            class="screen screen-cover active-screen"
+        >
+
+            <div class="cover-content">
+
+                <p class="cover-small-title">
+                    ENGAGEMENT INVITATION
+                </p>
+
+                <h1 class="cover-title">
+                    A Beautiful Moment
+                </h1>
+
+                <p class="cover-script">
+                    awaits you
+                </p>
+
+                <div class="gold-line"></div>
+
+                <button
+                    id="openInvitation"
+                    class="primary-button"
+                    type="button"
+                >
+                    <span>OPEN INVITATION</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SCREEN 2 — INTRODUCTION
+             ================================================= -->
+
+        <section
+            id="screen2"
+            class="screen intro-screen"
+        >
+
+            <div class="intro-content">
+
+                <p class="section-label">
+                    WITH JOY IN OUR HEARTS
+                </p>
+
+                <h2 class="intro-title">
+                    Join us,
+                    <br>
+                    as we celebrate
+                    <br>
+                    the engagement of
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SCREEN 3 — COUPLE REVEAL
+             ================================================= -->
+
+        <section
+            id="screen3"
+            class="screen couple-screen"
+        >
+
+            <div class="couple-content">
+
+                <p class="couple-overline">
+                    TOGETHER WITH OUR FAMILIES
+                </p>
+
+                <h2 class="couple-name">
+                    AMRITHA
+                </h2>
+
+                <p class="couple-and">
+                    and
+                </p>
+
+                <h2 class="couple-name">
+                    ABHIJITH
+                </h2>
+
+                <p class="couple-subtitle">
+                    ARE GETTING ENGAGED
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SCREEN 4 — SCROLLING INVITATION
+             ================================================= -->
+
+        <section
+            id="screen4"
+            class="invitation-scroll"
+        >
+
+
+            <!-- =============================================
+                 CARD 1 — INVITATION
+                 ============================================= -->
+
+            <article class="invitation-card invitation-message-card">
+
+                <div class="card-inner">
+
+                    <p class="card-label">
+                        INVITATION
+                    </p>
+
+                    <h2 class="quote-title">
+                        Every love story is beautiful,
+                        <br>
+                        but ours is our favorite.
+                    </h2>
+
+                    <div class="gold-divider"></div>
+
+                    <p class="invitation-text">
+                        We joyfully invite you to be a part
+                        of the engagement ceremony of our
+                        dearest Amritha and Abhijith.
+                    </p>
+
+                    <p class="invitation-text">
+                        Your presence and blessings will make
+                        this beautiful occasion even more special.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- =============================================
+                 CARD 2 — COUPLE & FAMILIES
+                 ============================================= -->
+
+            <article class="invitation-card family-card">
+
+                <div class="card-inner family-inner">
+
+                    <p class="card-label">
+                        THE COUPLE
+                    </p>
+
+                    <h2 class="family-couple-name">
+                        AMRITHA
+                    </h2>
+
+                    <p class="family-and">
+                        &
+                    </p>
+
+                    <h2 class="family-couple-name">
+                        ABHIJITH
+                    </h2>
+
+
+                    <div class="family-details">
+
+                        <div class="family-side">
+
+                            <p class="family-role">
+                                Daughter of
+                            </p>
+
+                            <p class="parent-name">
+                                Mr. [Bride's Father's Name]
+                            </p>
+
+                            <p class="parent-name">
+                                Mrs. [Bride's Mother's Name]
+                            </p>
+
+                        </div>
+
+
+                        <div class="family-side">
+
+                            <p class="family-role">
+                                Son of
+                            </p>
+
+                            <p class="parent-name">
+                                Mr. [Groom's Father's Name]
+                            </p>
+
+                            <p class="parent-name">
+                                Mrs. [Groom's Mother's Name]
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =============================================
+                 CARD 3 — DATE & VENUE
+                 ============================================= -->
+
+            <article class="invitation-card event-card">
+
+                <div class="card-inner">
+
+                    <p class="card-label">
+                        SAVE THE DATE
+                    </p>
+
+                    <h2 class="event-date">
+                        12.09.2026
+                    </h2>
+
+                    <p class="event-day">
+                        SATURDAY
+                    </p>
+
+
+                    <div class="event-divider"></div>
+
+
+                    <p class="event-label">
+                        MUHURTAM
+                    </p>
+
+                    <p class="event-time">
+                        11:00 AM — 11:30 AM
+                    </p>
+
+
+                    <div class="venue-section">
+
+                        <p class="event-label">
+                            VENUE
+                        </p>
+
+                        <h3 class="venue-name">
+                            Paradise Convention Hall
+                        </h3>
+
+                    </div>
+
+
+                    <a
+                        class="map-button"
+                        href="https://maps.app.goo.gl/13y5gNsfgYqBhMbC8?g_st=ic"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        VIEW ON MAPS
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =============================================
+                 CARD 4 — COUNTDOWN
+                 ============================================= -->
+
+            <article class="invitation-card countdown-card">
+
+                <div class="card-inner">
+
+                    <p class="card-label">
+                        COUNTDOWN TO OUR DAY
+                    </p>
+
+
+                    <div
+                        id="countdown"
+                        class="countdown-container"
+                    >
+
+                        <div class="countdown-unit">
+                            <span id="days">00</span>
+                            <small>DAYS</small>
+                        </div>
+
+                        <div class="countdown-separator">
+                            :
+                        </div>
+
+                        <div class="countdown-unit">
+                            <span id="hours">00</span>
+                            <small>HOURS</small>
+                        </div>
+
+                        <div class="countdown-separator">
+                            :
+                        </div>
+
+                        <div class="countdown-unit">
+                            <span id="minutes">00</span>
+                            <small>MINUTES</small>
+                        </div>
+
+                        <div class="countdown-separator">
+                            :
+                        </div>
+
+                        <div class="countdown-unit">
+                            <span id="seconds">00</span>
+                            <small>SECONDS</small>
+                        </div>
+
+                    </div>
+
+
+                    <!--
+                        This message appears automatically
+                        at 11:00 AM on 12 September 2026.
+                    -->
+
+                    <div
+                        id="dayMessage"
+                        class="special-day-message hidden"
+                    >
+                        Today is the day we begin
+                        a beautiful new chapter.
+                    </div>
+
+
+                    <!--
+                        This message appears automatically
+                        after 11:30 AM on 12 September 2026.
+                    -->
+
+                    <div
+                        id="thankYouMessage"
+                        class="special-day-message hidden"
+                    >
+                        Thank you for being a part
+                        of our special day.
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =============================================
+                 CARD 5 — RSVP
+                 ============================================= -->
+
+            <article class="invitation-card rsvp-card">
+
+                <div class="card-inner">
+
+                    <p class="card-label">
+                        RSVP
+                    </p>
+
+                    <h2 class="rsvp-title">
+                        We would be delighted
+                        <br>
+                        to celebrate this special
+                        <br>
+                        occasion with you.
+                    </h2>
+
+                    <p class="rsvp-text">
+                        Kindly confirm your presence with us.
+                    </p>
+
+                    <a
+                        href="#"
+                        id="rsvpButton"
+                        class="gold-button"
+                    >
+                        RSVP
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =============================================
+                 CARD 6 — CLOSING MESSAGE
+                 ============================================= -->
+
+            <article class="invitation-card closing-card">
+
+                <div class="card-inner">
+
+                    <p class="closing-message">
+                        We can't wait to celebrate
+                        <br>
+                        this special day with you.
+                    </p>
+
+                    <div class="gold-divider"></div>
+
+                    <p class="closing-small">
+                        WITH LOVE
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- =============================================
+                 CARD 7 — FAMILIES
+                 ============================================= -->
+
+            <article class="invitation-card families-card">
+
+                <div class="card-inner">
+
+                    <p class="closing-small">
+                        WITH LOVE,
+                    </p>
+
+                    <h2 class="families-title">
+                        OUR FAMILIES
+                    </h2>
+
+                    <div class="gold-divider"></div>
+
+                    <p class="families-text">
+                        With the blessings and love
+                        of our families, we begin
+                        this beautiful new chapter.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- =============================================
+                 FINAL END
+                 ============================================= -->
+
+            <footer class="invitation-footer">
+
+                <p>
+                    AMRITHA & ABHIJITH
+                </p>
+
+                <span>
+                    12 · 09 · 2026
+                </span>
+
+            </footer>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
