@@ -1,0 +1,1617 @@
+/* =========================================================
+   AMRITHA & ABHIJITH
+   ENGAGEMENT INVITATION
+   MAIN STYLESHEET
+   ========================================================= */
+
+
+/* =========================================================
+   1. ROOT VARIABLES
+   ========================================================= */
+
+:root {
+    --ivory: #f8f5ef;
+    --ivory-light: #fcfaf6;
+    --burgundy: #4b0808;
+    --burgundy-dark: #260303;
+    --burgundy-soft: #651313;
+
+    --gold: #b89a52;
+    --gold-light: #d6bd7b;
+
+    --text-dark: #351010;
+    --text-soft: #6d5550;
+
+    --white: #fffdf9;
+
+    --shadow-soft:
+        0 12px 35px rgba(55, 12, 12, 0.08);
+
+    --shadow-deep:
+        0 18px 50px rgba(30, 0, 0, 0.22);
+
+    --transition:
+        cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================================================
+   2. RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255, 255, 255, 0.75),
+            transparent 45%
+        ),
+        var(--ivory);
+
+    color: var(--text-dark);
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+button {
+    font: inherit;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   3. IMPORTED FONTS
+   ========================================================= */
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&family=Italiana&display=swap'
+);
+
+
+/* =========================================================
+   4. GLOBAL SCREEN
+   ========================================================= */
+
+.screen {
+    width: 100%;
+    min-height: 100svh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   5. SCREEN 1 — COVER
+   ========================================================= */
+
+.screen-cover {
+    background:
+        radial-gradient(
+            circle at center,
+            #fffdf9 0%,
+            var(--ivory) 65%,
+            #f2eee5 100%
+        );
+
+    color: var(--text-dark);
+}
+
+
+.cover-content {
+    width: min(90%, 430px);
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 30px 20px;
+}
+
+
+.cover-small-title {
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+    font-weight: 400;
+
+    letter-spacing: 0.42em;
+
+    color: var(--gold);
+
+    margin-bottom: 32px;
+
+    opacity: 0;
+    animation: fadeUp 1.2s var(--transition) 0.2s forwards;
+}
+
+
+.cover-title {
+    font-family:
+        "Italiana",
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(44px, 12vw, 70px);
+
+    line-height: 0.95;
+
+    font-weight: 400;
+
+    letter-spacing: 0.015em;
+
+    color: var(--burgundy);
+
+    max-width: 390px;
+
+    opacity: 0;
+    animation: titleReveal 1.5s var(--transition) 0.45s forwards;
+}
+
+
+.cover-script {
+    margin-top: 18px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(27px, 7vw, 38px);
+
+    font-style: italic;
+    font-weight: 500;
+
+    color: var(--burgundy-soft);
+
+    letter-spacing: 0.03em;
+
+    opacity: 0;
+    animation: fadeUp 1.2s var(--transition) 0.8s forwards;
+}
+
+
+/* =========================================================
+   GOLD DECORATIVE LINE
+   ========================================================= */
+
+.gold-line {
+    width: 75px;
+    height: 1px;
+
+    background: var(--gold);
+
+    margin: 35px 0 45px;
+
+    position: relative;
+
+    opacity: 0;
+
+    animation:
+        lineReveal 1s var(--transition) 1s forwards;
+}
+
+
+.gold-line::before,
+.gold-line::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 5px;
+    height: 5px;
+
+    border: 1px solid var(--gold);
+
+    transform:
+        translateY(-50%)
+        rotate(45deg);
+}
+
+
+.gold-line::before {
+    left: -3px;
+}
+
+
+.gold-line::after {
+    right: -3px;
+}
+
+
+/* =========================================================
+   6. PRIMARY BUTTON
+   ========================================================= */
+
+.primary-button {
+    position: relative;
+
+    min-width: 220px;
+    height: 58px;
+
+    padding: 0 28px;
+
+    border: 1px solid var(--gold);
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--burgundy-soft),
+            var(--burgundy)
+        );
+
+    color: var(--gold-light);
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 0.3em;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(62, 5, 5, 0.2);
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    animation:
+        buttonReveal 1.1s var(--transition) 1.25s forwards;
+
+    transition:
+        transform 0.35s var(--transition),
+        box-shadow 0.35s ease;
+}
+
+
+.primary-button::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 4px;
+
+    border: 1px solid rgba(214, 189, 123, 0.55);
+
+    pointer-events: none;
+}
+
+
+.primary-button::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.15),
+            transparent 65%
+        );
+
+    top: 50%;
+    left: -130px;
+
+    transform: translateY(-50%);
+
+    transition: left 0.7s ease;
+}
+
+
+.primary-button:hover::after {
+    left: 120%;
+}
+
+
+.primary-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 35px rgba(62, 5, 5, 0.3);
+}
+
+
+.primary-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   7. SCREEN 2 — INTRO
+   ========================================================= */
+
+.intro-screen {
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #fffdf9,
+            var(--ivory) 70%
+        );
+
+    color: var(--burgundy);
+}
+
+
+.intro-content {
+    width: min(88%, 430px);
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+.section-label {
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.45em;
+
+    color: var(--gold);
+
+    margin-bottom: 38px;
+
+    opacity: 0;
+}
+
+
+.intro-title {
+    font-family:
+        "Italiana",
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(37px, 10vw, 58px);
+
+    line-height: 1.18;
+
+    font-weight: 400;
+
+    color: var(--burgundy);
+
+    opacity: 0;
+}
+
+
+/* Activated by JavaScript */
+
+.intro-screen.show-content .section-label {
+    animation:
+        fadeUp 1.1s var(--transition) forwards;
+}
+
+
+.intro-screen.show-content .intro-title {
+    animation:
+        titleReveal 1.5s var(--transition) 0.25s forwards;
+}
+
+
+/* =========================================================
+   8. SCREEN 3 — COUPLE REVEAL
+   ========================================================= */
+
+.couple-screen {
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #5d1111 0%,
+            var(--burgundy) 45%,
+            var(--burgundy-dark) 100%
+        );
+
+    color: var(--white);
+}
+
+
+.couple-content {
+    width: min(92%, 480px);
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+.couple-overline {
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 0.4em;
+
+    color: var(--gold-light);
+
+    margin-bottom: 42px;
+
+    opacity: 0;
+}
+
+
+.couple-name {
+    font-family:
+        "Italiana",
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(58px, 17vw, 100px);
+
+    line-height: 0.9;
+
+    font-weight: 400;
+
+    letter-spacing: 0.015em;
+
+    color: #fffaf0;
+
+    text-shadow:
+        0 3px 25px rgba(0,0,0,0.18);
+
+    opacity: 0;
+}
+
+
+.couple-and {
+    margin: 20px 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 30px;
+
+    font-style: italic;
+
+    color: var(--gold-light);
+
+    opacity: 0;
+}
+
+
+.couple-subtitle {
+    margin-top: 45px;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.4em;
+
+    color: var(--gold-light);
+
+    opacity: 0;
+}
+
+
+/* Couple animation */
+
+.couple-screen.show-content .couple-overline {
+    animation:
+        fadeUp 1s var(--transition) forwards;
+}
+
+
+.couple-screen.show-content .couple-name:nth-of-type(1) {
+    animation:
+        coupleReveal 1.5s var(--transition) 0.35s forwards;
+}
+
+
+.couple-screen.show-content .couple-and {
+    animation:
+        fadeUp 1s var(--transition) 0.8s forwards;
+}
+
+
+.couple-screen.show-content .couple-name:nth-of-type(2) {
+    animation:
+        coupleReveal 1.5s var(--transition) 1.05s forwards;
+}
+
+
+.couple-screen.show-content .couple-subtitle {
+    animation:
+        fadeUp 1s var(--transition) 1.6s forwards;
+}
+
+
+/* =========================================================
+   9. SCROLLING INVITATION
+   ========================================================= */
+
+.invitation-scroll {
+    width: 100%;
+
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(255,255,255,0.7),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 85%,
+            rgba(255,255,255,0.6),
+            transparent 35%
+        ),
+        var(--ivory);
+
+    padding: 55px 15px 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   10. INVITATION CARDS
+   ========================================================= */
+
+.invitation-card {
+    width: min(100%, 480px);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.9),
+            rgba(252,249,243,0.95)
+        );
+
+    border: 1px solid rgba(184,154,82,0.35);
+
+    border-radius: 24px;
+
+    box-shadow: var(--shadow-soft);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.invitation-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px solid rgba(184,154,82,0.18);
+
+    border-radius: 18px;
+
+    pointer-events: none;
+}
+
+
+.card-inner {
+    position: relative;
+
+    z-index: 1;
+
+    padding: 48px 28px;
+}
+
+
+/* =========================================================
+   11. CARD LABEL
+   ========================================================= */
+
+.card-label {
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.38em;
+
+    color: var(--gold);
+
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   12. INVITATION MESSAGE
+   ========================================================= */
+
+.quote-title {
+    font-family:
+        "Italiana",
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(30px, 8vw, 43px);
+
+    line-height: 1.25;
+
+    font-weight: 400;
+
+    color: var(--burgundy);
+
+    text-align: center;
+}
+
+
+.gold-divider {
+    width: 55px;
+    height: 1px;
+
+    background: var(--gold);
+
+    margin: 28px auto;
+}
+
+
+.invitation-text {
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 18px;
+
+    line-height: 1.75;
+
+    color: var(--text-soft);
+
+    text-align: justify;
+
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   13. FAMILY CARD
+   ========================================================= */
+
+.family-inner {
+    text-align: center;
+}
+
+
+.family-couple-name {
+    font-family:
+        "Italiana",
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(48px, 13vw, 65px);
+
+    line-height: 0.9;
+
+    font-weight: 400;
+
+    color: var(--burgundy);
+}
+
+
+.family-and {
+    margin: 13px 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 27px;
+
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+
+.family-details {
+    margin-top: 42px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 32px;
+}
+
+
+.family-side {
+    text-align: center;
+}
+
+
+.family-role {
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 0.3em;
+
+    color: var(--gold);
+
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+
+
+.parent-name {
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    color: var(--text-soft);
+}
+
+
+/* =========================================================
+   14. EVENT CARD
+   ========================================================= */
+
+.event-card {
+    text-align: center;
+}
+
+
+.event-date {
+    font-family:
+        "Italiana",
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(48px, 14vw, 68px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: var(--burgundy);
+}
+
+
+.event-day {
+    margin-top: 10px;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.35em;
+
+    color: var(--gold);
+}
+
+
+.event-divider {
+    width: 1px;
+
+    height: 42px;
+
+    background: var(--gold);
+
+    margin: 27px auto;
+}
+
+
+.event-label {
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 0.35em;
+
+    color: var(--gold);
+
+    margin-bottom: 8px;
+}
+
+
+.event-time {
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 24px;
+
+    color: var(--burgundy);
+}
+
+
+.venue-section {
+    margin-top: 35px;
+}
+
+
+.venue-name {
+    font-family:
+        "Italiana",
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 30px;
+
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    color: var(--burgundy);
+}
+
+
+/* =========================================================
+   15. MAP BUTTON
+   ========================================================= */
+
+.map-button,
+.gold-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 185px;
+
+    min-height: 48px;
+
+    margin-top: 28px;
+
+    padding: 0 24px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 3px;
+
+    background: transparent;
+
+    color: var(--burgundy);
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.25em;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        transform 0.35s var(--transition);
+}
+
+
+.map-button:hover,
+.gold-button:hover {
+    background: var(--burgundy);
+
+    color: var(--gold-light);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   16. COUNTDOWN
+   ========================================================= */
+
+.countdown-card {
+    text-align: center;
+}
+
+
+.countdown-container {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 35px;
+}
+
+
+.countdown-unit {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    min-width: 54px;
+}
+
+
+.countdown-unit span {
+    font-family:
+        "Italiana",
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(30px, 8vw, 43px);
+
+    color: var(--burgundy);
+
+    line-height: 1;
+}
+
+
+.countdown-unit small {
+    margin-top: 9px;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 6px;
+
+    letter-spacing: 0.18em;
+
+    color: var(--gold);
+}
+
+
+.countdown-separator {
+    font-family:
+        "Italiana",
+        Georgia,
+        serif;
+
+    font-size: 28px;
+
+    color: var(--gold);
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   17. SPECIAL DAY MESSAGES
+   ========================================================= */
+
+.special-day-message {
+    font-family:
+        "Italiana",
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(27px, 7vw, 39px);
+
+    line-height: 1.3;
+
+    color: var(--burgundy);
+
+    text-align: center;
+
+    padding: 15px 5px;
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   18. RSVP CARD
+   ========================================================= */
+
+.rsvp-card {
+    background:
+        linear-gradient(
+            145deg,
+            var(--burgundy-soft),
+            var(--burgundy-dark)
+        );
+
+    border-color:
+        rgba(214,189,123,0.55);
+
+    color: var(--white);
+
+    box-shadow: var(--shadow-deep);
+}
+
+
+.rsvp-card::before {
+    border-color:
+        rgba(214,189,123,0.25);
+}
+
+
+.rsvp-card .card-label {
+    color: var(--gold-light);
+}
+
+
+.rsvp-title {
+    font-family:
+        "Italiana",
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(28px, 8vw, 40px);
+
+    line-height: 1.3;
+
+    font-weight: 400;
+
+    text-align: center;
+
+    color: var(--white);
+}
+
+
+.rsvp-text {
+    margin-top: 25px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 17px;
+
+    text-align: center;
+
+    color: rgba(255,255,255,0.75);
+}
+
+
+.rsvp-card .gold-button {
+    color: var(--gold-light);
+
+    border-color: var(--gold-light);
+
+    display: flex;
+
+    width: fit-content;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.rsvp-card .gold-button:hover {
+    background: var(--gold-light);
+
+    color: var(--burgundy);
+}
+
+
+/* =========================================================
+   19. CLOSING CARD
+   ========================================================= */
+
+.closing-card {
+    text-align: center;
+}
+
+
+.closing-message {
+    font-family:
+        "Italiana",
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(30px, 8vw, 44px);
+
+    line-height: 1.35;
+
+    color: var(--burgundy);
+}
+
+
+.closing-small {
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.42em;
+
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   20. FAMILIES CARD
+   ========================================================= */
+
+.families-card {
+    background:
+        linear-gradient(
+            145deg,
+            var(--burgundy-soft),
+            var(--burgundy-dark)
+        );
+
+    border-color:
+        rgba(214,189,123,0.5);
+
+    color: var(--white);
+
+    text-align: center;
+}
+
+
+.families-card::before {
+    border-color:
+        rgba(214,189,123,0.25);
+}
+
+
+.families-card .closing-small {
+    color: var(--gold-light);
+}
+
+
+.families-title {
+    margin-top: 18px;
+
+    font-family:
+        "Italiana",
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(35px, 9vw, 50px);
+
+    font-weight: 400;
+
+    color: var(--white);
+}
+
+
+.families-card .gold-divider {
+    background: var(--gold-light);
+}
+
+
+.families-text {
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: rgba(255,255,255,0.78);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   21. FOOTER
+   ========================================================= */
+
+.invitation-footer {
+    width: min(100%, 480px);
+
+    padding: 25px 20px 45px;
+
+    text-align: center;
+
+    color: var(--text-soft);
+}
+
+
+.invitation-footer p {
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 0.35em;
+}
+
+
+.invitation-footer span {
+    display: block;
+
+    margin-top: 12px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 15px;
+
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   22. MUSIC CONTROL
+   ========================================================= */
+
+.music-control {
+    position: fixed;
+
+    right: 18px;
+    bottom: 20px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--gold);
+
+    background:
+        rgba(55, 5, 5, 0.95);
+
+    color: var(--gold-light);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.2);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(15px)
+        scale(0.8);
+
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease,
+        transform 0.5s var(--transition);
+}
+
+
+.music-control.visible {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+.music-icon {
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 22px;
+
+    line-height: 1;
+}
+
+
+.music-control.playing .music-icon {
+    animation:
+        musicPulse 1.4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   23. ANIMATION KEYFRAMES
+   ========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes titleReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.96);
+
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter: blur(0);
+    }
+}
+
+
+@keyframes lineReveal {
+
+    from {
+        opacity: 0;
+
+        width: 0;
+    }
+
+    to {
+        opacity: 1;
+
+        width: 75px;
+    }
+}
+
+
+@keyframes buttonReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes coupleReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(45px)
+            scale(0.92);
+
+        filter: blur(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter: blur(0);
+    }
+}
+
+
+@keyframes musicPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* =========================================================
+   24. MOBILE OPTIMIZATION
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .card-inner {
+        padding: 43px 25px;
+    }
+
+
+    .invitation-scroll {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .countdown-container {
+        gap: 5px;
+    }
+
+
+    .countdown-unit {
+        min-width: 48px;
+    }
+
+
+    .countdown-separator {
+        font-size: 23px;
+    }
+
+
+    .music-control {
+        right: 15px;
+        bottom: 15px;
+
+        width: 45px;
+        height: 45px;
+    }
+}
+
+
+/* =========================================================
+   25. VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .cover-title {
+        font-size: 42px;
+    }
+
+
+    .intro-title {
+        font-size: 34px;
+    }
+
+
+    .couple-name {
+        font-size: 52px;
+    }
+
+
+    .countdown-unit {
+        min-width: 42px;
+    }
+
+
+    .countdown-unit span {
+        font-size: 27px;
+    }
+
+
+    .countdown-separator {
+        font-size: 20px;
+    }
+}
+
+
+/* =========================================================
+   26. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
